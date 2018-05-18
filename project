@@ -1,0 +1,76 @@
+#include <iostream>
+#include <stdlib.h>
+#include <conio.h>
+#include <math.h>
+#include <iomanip>
+#include <stdio.h>
+#include <string.h> 
+using namespace std;
+int NrCuvinte(char str[256]); 
+int main() { 
+	int key; 
+	char str[256]; 
+	
+	do{ 
+		system(" cls"); 
+		cout << "Proiect nr.5" << endl;
+	    cout << "\n 1. intr-o fraza de determinat numArul de cuvinte";
+	    cout << "\n 2. Cuvintele, ce contin orice vocala doar o singura data. .";
+	    cout << "\n 3. Cuvintele cu litere duble dintr-o fraza.";
+	    cout << "\n 4. AZntr-un fisier de determinat numA?rul de cuvinte";
+	    cout << "\n 5. Cuvintele, lungimea cA?rora e mai mare ca 6 dintr-un fisier.";
+	    cout << "\n 6. Cuvintele cu litere duble (aceleaAYi 2 litere consecutive)dintr-un fisier.";
+	    cout << "\n 7. De transcris cuvintele, lungimea cA?rora e mai mare ca 6 in alt fisier.";
+	    cout << "\n 8. De sters cuvintele cu litere duble din fisier.";
+		cout << "0.Exit" << endl; 
+		cout << "\tSelecteaza optiunea ===> "; 
+		cin >> key; 
+		system ("cls"); 
+		switch(key){ 
+			case 1: 
+			puts("Introduceti fraza ");
+			gets(str);
+            cout << "In total sunt " << NrCuvinte(str) << " cuvinte. ";
+			break; 
+			case 2: 
+			
+			break; 
+			case 3: 
+			
+			break; 
+			case 4: 
+			
+			
+			break; 
+			case 5: 
+			
+			break;
+			case 6: 
+			
+			break;
+			case 7: 
+			
+			break;
+			case 8: 
+			
+			break;
+			case 0: 
+			
+			break; 
+			} 
+			getch (); 
+		}while(key != 0); 
+	return 0; 
+} 
+int NrCuvinte(char str[256]) {
+	int n = 0;
+    char copia [81];
+    strcpy(copia, str);
+    char *cuvint;
+    if((cuvint = strtok(copia, " \n,.//?!-+:")) == NULL)
+        return 0;
+    n = 1;
+    while((cuvint = strtok(NULL, " \n,.//?!-+")) != NULL)
+            n++;
+    return n;
+}
